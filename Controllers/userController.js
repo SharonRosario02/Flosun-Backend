@@ -106,17 +106,16 @@ const deleteAllUsersController = asyncHandler(async (req, res) => {
 // Delete a single user by ID
 const deleteSingleUserController = asyncHandler(async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
+    const user = await User.findByIdAndDelete(req.params.id);
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    await user.remove();
     res.status(200).json({ message: 'User deleted' });
   } catch (error) {
     console.log(error.message);
-    res.status(500).json({ message: 'Server error while deleting user' });
+    res.status(500).json({ message: 'Server error while deleting user', error: error });
   }
 });
 
@@ -259,6 +258,7 @@ const resetPasswordController = asyncHandler(async (req, res) => {
     res.status(500).json({ message: 'Server error while resetting password' });
   }
 });
+
 module.exports = {
   signUpController,
   signInController,
