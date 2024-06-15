@@ -142,13 +142,13 @@ const generateResetPasswordOTP = asyncHandler(async (req, res) => {
       // Your email transport configuration
       service: 'gmail',
       auth: {
-        user: 'sharon@ealphabits.com',
+        user: 'sharon2002222@gmail.com',
         pass: 'garq gtyt qlcb fpzk',
       },
     });
 
     const mailOptions = {
-      from: 'sharon@ealphabits.com',
+      from: 'sharon2002222@gmail.com',
       to: user.email,
       subject: 'Reset Password OTP - Flosun',
       html: `
