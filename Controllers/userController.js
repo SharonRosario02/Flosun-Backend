@@ -70,6 +70,20 @@ const getAllUsersController = asyncHandler(async (req, res) => {
   }
 });
 
+const getUserByIdController = asyncHandler(async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+
+    if (!user) {
+      ret    }
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: 'Server error while getting user' });
+  }
+});
+
 // Update a user by ID
 const updateUserController = asyncHandler(async (req, res) => {
   try {
@@ -269,4 +283,5 @@ module.exports = {
   generateResetPasswordOTP,
   verifyResetPasswordOTP,
   resetPasswordController,
+  getUserByIdController,
 };

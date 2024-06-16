@@ -9,6 +9,7 @@ const {
   generateResetPasswordOTP,
   verifyResetPasswordOTP,
   resetPasswordController,
+  getUserByIdController
 } = require('../Controllers/userController.js');
 
 const router = express.Router();
@@ -21,6 +22,9 @@ router.post('/signin', signInController);
 
 // Get all users
 router.get('/', getAllUsersController);
+
+// Get one user by id
+router.get('/:id', getUserByIdController);
 
 // Update a user by ID
 router.put('/:id', updateUserController);
