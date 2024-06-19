@@ -5,13 +5,13 @@ async function sendReminderEmail(email, eventName) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'sharon@ealphabits.com',
+        user: 'naikpradnya64@gmail.com',
         pass: 'garq gtyt qlcb fpzk',
       },
     });
 
     const mailOptions = {
-      from: 'sharon@ealphabits.com',
+      from: 'naikpradnya64@gmail.com',
       to: email,
       subject: 'Reminder - Flosun',
       html: `
