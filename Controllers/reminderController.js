@@ -85,6 +85,9 @@ const createController = asyncHandler(async (req, res) => {
             user: 'naikpradnya64@gmail.com',
             pass: 'lycw hnhg rynm abht',
           },
+          tls: {
+            rejectUnauthorized: false,
+          },
           // Add retry options
           pool: true,
           maxConnections: 1,
