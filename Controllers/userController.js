@@ -157,7 +157,7 @@ const generateResetPasswordOTP = asyncHandler(async (req, res) => {
       service: 'gmail',
       auth: {
         user: 'naikpradnya64@gmail.com',
-        pass: 'garq gtyt qlcb fpzk',
+        pass: 'lycw hnhg rynm abht',
       },
     });
 

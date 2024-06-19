@@ -6,7 +6,7 @@ async function sendReminderEmail(email, eventName) {
       service: 'gmail',
       auth: {
         user: 'naikpradnya64@gmail.com',
-        pass: 'garq gtyt qlcb fpzk',
+        pass: 'lycw hnhg rynm abht',
       },
     });
 
