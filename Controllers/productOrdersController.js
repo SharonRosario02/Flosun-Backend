@@ -21,6 +21,25 @@ const getAllController = asyncHandler(async (req, res) => {
       .populate('customerId', '-password -createdAt -updatedAt')
       .populate({
         path: 'products.productId',
+        select: 'price name img sdescription',
+      });
+    res.status(200).json(orders);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({ message: error.message });
+  }
+});
+
+
+// Get all orders
+const getAllByCustomerIdController = asyncHandler(async (req, res) => {
+  try {
+    const id = req.params.id;
+    console.log(id)
+    const orders = await ProductOrderModel.find({customerId:id})
+      .populate('customerId', '-password -createdAt -updatedAt')
+      .populate({
+        path: 'products.productId',
         select: 'price name img description',
       });
     res.status(200).json(orders);
@@ -98,4 +117,5 @@ module.exports = {
   updateByIdController,
   deleteByIdController,
   deleteAllController,
+  getAllByCustomerIdController
 };
